@@ -20,12 +20,12 @@ public class MovieDestination {
                 break;
             case "Sofia":
                 if (season.equals("Summer")) {
-                    price = (12500 * days) +(12500*days) * 0.70;
+                    price = (12500 * days) * 1.25;
 
                 } else {
-                    price = (17000 * days)+(17000*days) * 0.70;
-                    break;
+                    price = (17000 * days) * 1.25;
                 }
+                break;
             case "London":
                 if (season.equals("Summer")) {
                     price = (20250 * days);
@@ -33,13 +33,14 @@ public class MovieDestination {
                 } else {
                     price = (24000 * days) ;
                 }
+                break;
 
         }
         if (buget>price){
-            System.out.printf("The budget for the movie is enough! We have %.2f leva left!",buget-price);
+            System.out.printf("The budget for the movie is enough! We have %.2f leva left!",Math.abs (price-buget));
 
         }else {
-            System.out.printf("The director needs %.2f leva more!",price-buget);
+            System.out.printf("The director needs %.2f leva more!",Math.abs (price-buget));
         }
     }
 }

@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class SeriesCalculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String name=scanner.nextLine();
+        int season= Integer.parseInt(scanner.nextLine());
+        int episode= Integer.parseInt(scanner.nextLine());
+        int time= Integer.parseInt(scanner.nextLine());
+
+        double reklam=(time*0.20)+time;
+        double seasonBouns=season*10;
+
+        double total=(season*episode)*(reklam)+seasonBouns;
+
+        System.out.printf("Total time needed to watch the %s series is %.0f minutes.",name,total);
+
+    }
+}

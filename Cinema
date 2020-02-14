@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class four {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner (System.in);
+
+        int capaciti = Integer.parseInt (scanner.nextLine ());
+
+        int count;
+        int total = 0;
+        int moneyTotal = 0;
+        int gots = 0;
+        String full = scanner.nextLine ();
+
+        while (!full.equals ("Movie time!")) {
+            count = Integer.parseInt (full);
+            total = count + total;
+            if (total > capaciti) {
+                break;
+            }
+            if (count % 3 == 0) {
+                moneyTotal = (count * 5) - 5 + (moneyTotal);
+            } else {
+                moneyTotal = count * 5 + (moneyTotal);
+            }
+
+
+            full = scanner.nextLine ();
+
+        }
+        if (full.equals ("Movie time!")) {
+            System.out.printf ("There are %d seats left in the cinema.%n", capaciti - total);
+            gots++;
+
+        } else {
+            System.out.printf ("The cinema is full.%n");
+
+        }
+
+
+        System.out.printf ("Cinema income - %d lv.", moneyTotal);
+    }
+}

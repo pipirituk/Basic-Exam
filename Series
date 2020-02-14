@@ -1,0 +1,50 @@
+import java.util.Scanner;
+
+public class Series {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        double buget = Double.parseDouble(scanner.nextLine());
+        int count = Integer.parseInt(scanner.nextLine());
+        double finalPrice = 0;
+
+        for (int i = 0; i < count; i++) {
+
+            String name = scanner.nextLine();
+            double price = Double.parseDouble(scanner.nextLine());
+
+            switch (name) {
+
+
+                case "Thrones":
+                    finalPrice = price * 0.50 + finalPrice;
+                    break;
+                case "Lucifer":
+                    finalPrice = price * 0.60 + finalPrice;
+                    break;
+                case "Area":
+                    finalPrice = price * 0.90 + finalPrice;
+                    break;
+                case "Protector":
+                    finalPrice = price * 0.70 + finalPrice;
+                    break;
+                case "TotalDrama":
+                    finalPrice = price * 0.80 + finalPrice;
+                    break;
+                default:
+                    finalPrice = price + finalPrice;
+                    break;
+
+            }
+
+        }
+        if (buget >= finalPrice) {
+
+        System.out.printf("You bought all the series and left with %.2f lv.",buget-finalPrice);
+        }else {
+            System.out.printf("You need %.2f lv. more to buy the series!",finalPrice-buget);
+        }
+
+    }
+
+}

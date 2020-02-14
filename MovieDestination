@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class MovieDestination {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double buget = Double.parseDouble(scanner.nextLine());
+        String destination = scanner.nextLine();
+        String season = scanner.nextLine();
+        int days = Integer.parseInt(scanner.nextLine());
+
+        double price = 0;
+        switch (destination) {
+            case "Dubai":
+                if (season.equals("Summer")) {
+                    price = (40000 * days) * 0.70;
+
+                } else {
+                    price = (45000 * days) * 0.70;
+                }
+                break;
+            case "Sofia":
+                if (season.equals("Summer")) {
+                    price = (12500 * days) +(12500*days) * 0.70;
+
+                } else {
+                    price = (17000 * days)+(17000*days) * 0.70;
+                    break;
+                }
+            case "London":
+                if (season.equals("Summer")) {
+                    price = (20250 * days);
+
+                } else {
+                    price = (24000 * days) ;
+                }
+
+        }
+        if (buget>price){
+            System.out.printf("The budget for the movie is enough! We have %.2f leva left!",buget-price);
+
+        }else {
+            System.out.printf("The director needs %.2f leva more!",price-buget);
+        }
+    }
+}
